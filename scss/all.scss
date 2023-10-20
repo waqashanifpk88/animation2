@@ -1,0 +1,138 @@
+body{
+    margin: 0;
+}
+.wraper{
+    max-width:1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.section_wrp{
+    @media (min-width:576px){
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .img_section{
+        overflow: hidden;
+        position: sticky;
+        top: 0;
+        @media (min-width:576px){
+            width: 300px;
+            top: 10px;
+        }
+    }
+    .descrip_block{
+        
+        @media (min-width:576px){
+            width:calc(100% - 340px);
+        }
+    }
+    .img{
+        &.sticky-image{
+            img{
+                opacity: 1;
+            }
+        }
+        img{
+            &:first-child{
+                transform: none;
+                position: relative;
+            }
+        }
+        &-1{
+            img{
+                &:first-child{
+                    transform: none;
+                    position: relative;
+                    opacity: 1;
+                }
+            }
+        }
+        &-2{
+            img{
+                &:nth-child(2){
+                    transform: translateY(0);
+                }
+            }
+        }
+        &-3{
+            img{
+                &:nth-child(3){
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(-100%);
+        transition: all .25s linear;
+        &:first-child{
+            opacity: 0;
+        }
+    }
+}
+h2{
+    margin: 0 0 26px;
+}
+p{
+    margin: 0 0 16px;
+}
+
+img{
+    height: auto;
+    width: 100%;
+}
+.demy_text{
+    margin-bottom: 20px;
+}
+.descrip{
+    padding-top: 20px;
+    @media (min-width:576px){
+        margin-bottom: 40px;
+        padding-top: 0;
+    }
+}
+
+
+
+
+
+
+
+// .main{
+// 	width:100%;
+// 	height:auto;
+// 	position: relative;
+//     .row{
+        
+//         @media (min-width:576px){
+//             display: flex;
+//             flex-wrap: wrap;
+//             flex-direction: row-reverse;
+//         }
+//     }
+//     .col-6{
+//         @media (min-width:576px){
+//             width: 50%;
+//         }
+//     }
+
+// }
+// .img-wrp{
+//     position: sticky;
+//     top: 0;
+// }
+// .image {
+// 	background-image:url('https://i.postimg.cc/FRxNp6yG/hr-ax.png');
+// 	background-size:100% 100%;
+// 	background-attachment:fixed;
+// 	transition: 1000ms;
+// 	width: 200px;
+// 	height: 200px;
+// }
+// #one, #two, #three, #four {
+// 	min-height: 150px;
+// }
