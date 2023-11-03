@@ -1,4 +1,5 @@
 @import 'slick';
+@import 'swiper';
 $white:#fff;
 $cap-black:#222;
 
@@ -6,8 +7,6 @@ body{
     margin: 0;
 }
 .wraper{
-    max-width:1000px;
-    margin: 0 auto;
     padding: 0 15px;
 }
 
@@ -16,7 +15,7 @@ body{
 //     border: 2px solid #fff;
 //     color: #fff;
 //     font-size: 36px;
-//     font-weight: bold;
+//     font-weight: bold;Slide 1
 //     outline: none; /* revent the appearance of a tiny gray contour */
 //     padding: 18px 0;
 //     text-align: center;
@@ -39,16 +38,103 @@ body{
 .section_block_product_top{
     position: relative;
     height: 65%;
-    img{
-        height: 100%;
-        width: auto;
-    }
 }
 .slider-products{
     width: 500px;
     height: 100%;
+    margin: 0 auto;
+    .slick-list{
+        height: 100%;
+        *div{
+            height: 100%;
+        }
+    }
     .slide{
         width: 100%;
         height: 100%;
     }
+    .img{
+        height: 100%;
+    }
+    img{
+        height: 100%;
+        width: auto;
+    }
+    
 }
+.products-nav{
+    position: relative;
+    .slick-prev{
+        left: 0;
+        top: 50%;
+    }
+    .slick-arrow{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .slick-next{
+        right: 0;
+    }
+    img{
+        height: auto;
+        max-width: 100%;
+    }
+
+}
+
+
+
+
+
+
+body {
+    background: #eee;
+    margin: 0;
+    padding: 30px;
+    height: 300px;
+    overflow-x: hidden;
+  }
+  .swiper-container {
+    width: 100%;
+    height: 300px;
+    margin: 20px auto;
+  }
+  
+  .swiper-slide-container {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .gallery-top {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .gallery-bottom {
+    height: 100%;
+    width: 600px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 10px 0;
+    position: relative;
+    .img,
+    .swiper-slide-container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+  .gallery-bottom .swiper-slide {
+    width: 20%;
+    height: 100%;
+    opacity: 0.5;
+  }
+  
