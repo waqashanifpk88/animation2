@@ -19,12 +19,39 @@
     
 //   });
 
+function Tabs() {
+  var bindAll = function() {
+    var menuElements = document.querySelectorAll('[data-tab]');
+    for(var i = 0; i < menuElements.length ; i++) {
+      menuElements[i].addEventListener('click', change, false);
+    }
+  }
+
+  var clear = function() {
+    var menuElements = document.querySelectorAll('[data-tab]');
+    for(var i = 0; i < menuElements.length ; i++) {
+      menuElements[i].classList.remove('active');
+      var id = menuElements[i].getAttribute('data-tab');
+      document.getElementById(id).classList.remove('active');
+    }
+  }
+
+  var change = function(e) {
+    clear();
+    e.target.classList.add('active');
+    var id = e.currentTarget.getAttribute('data-tab');
+    document.getElementById(id).classList.add('active');
+  }
+
+  bindAll();
+}
+
+var connectTabs = new Tabs();
 
 
 
 
-
-  const sliderTop = new Swiper(".gallery-top", {
+  const sliderTop = new Swiper(".gallery-thumbs", {
     spaceBetween: 0,
     coverflowEffect: {
       rotate: 60,
@@ -34,12 +61,12 @@
     initialSlide: 1,
     breakpoints: {
       300: {
-        slidesPerView: 1
+        slidesPerView: 3
       },
-      1100: {
-        slidesPerView: 2
+      768: {
+        slidesPerView: 3
       },
-      1650: {
+      1200: {
         slidesPerView: 3
       }
     },
@@ -52,7 +79,7 @@
     slideToClickedSlide: true
   });
   
-  const sliderBottom = new Swiper(".gallery-bottom", {
+  const sliderBottom = new Swiper(".gallery-single", {
     initialSlide: 1,
     centeredSlides: true,
     effect: "fade",
@@ -72,3 +99,5 @@
   //   sliderTop.slideTo(sliderBottom.activeIndex);
   // });
   
+
+

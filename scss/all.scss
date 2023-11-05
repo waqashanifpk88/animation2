@@ -1,4 +1,3 @@
-@import 'slick';
 @import 'swiper';
 $white:#fff;
 $cap-black:#222;
@@ -10,34 +9,29 @@ body{
     padding: 0 15px;
 }
 
-//   .slick-slide {
-//     background: #c69;
-//     border: 2px solid #fff;
-//     color: #fff;
-//     font-size: 36px;
-//     font-weight: bold;Slide 1
-//     outline: none; /* revent the appearance of a tiny gray contour */
-//     padding: 18px 0;
-//     text-align: center;
-//   }
-//   .slider:nth-of-type(n+3) .slick-slide { background: #9c6; }
-//   .slider:nth-of-type(n+5) .slick-slide { background: #69c; }
-//   .slider-nav {
-//     margin-bottom: 12px;
-//   }
-//   .slider-nav .slick-current,
-//   .slider-nav .slick-slide:hover {
-//     cursor: pointer;
-//     opacity: .7;
-//   }
-
 
 .section_block_product{
     height: 100vh;
+    overflow: hidden;
 }
 .section_block_product_top{
     position: relative;
     height: 65%;
+    .img{
+        height: 100%;
+        text-align: center;
+        img{
+            height: 100%;
+            width: auto;
+            display: inline-block;
+            vertical-align: top;
+            max-width: 100%;
+            object-fit: contain;
+        }
+    }
+    .tab_content{
+        height: 100%;
+    }
 }
 .slider-products{
     width: 500px;
@@ -55,6 +49,7 @@ body{
     }
     .img{
         height: 100%;
+        
     }
     img{
         height: 100%;
@@ -62,79 +57,100 @@ body{
     }
     
 }
-.products-nav{
-    position: relative;
-    .slick-prev{
-        left: 0;
-        top: 50%;
-    }
-    .slick-arrow{
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    .slick-next{
-        right: 0;
-    }
-    img{
-        height: auto;
-        max-width: 100%;
-    }
 
-}
-
-
-
-
-
-
-body {
-    background: #eee;
-    margin: 0;
-    padding: 30px;
-    height: 300px;
-    overflow-x: hidden;
-  }
   .swiper-container {
     width: 100%;
-    height: 300px;
-    margin: 20px auto;
-  }
-  
-  .swiper-slide-container {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
     height: 100%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   
-  .gallery-top {
+//   .swiper-slide-container {
+//     text-align: center;
+//     font-size: 18px;
+//     background: #fff;
+//     height: 100%;
+//     margin: auto;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//   }
+  
+  .gallery-thumbs {
     position: absolute;
     left: 0;
     width: 100%;
     top: 50%;
     transform: translateY(-50%);
+    .img{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
   }
-  .gallery-bottom {
+  .gallery-single{
     height: 100%;
-    width: 600px;
     margin: 0 auto;
     box-sizing: border-box;
     padding: 10px 0;
     position: relative;
-    .img,
-    .swiper-slide-container {
-      max-width: 500px;
-      margin: 0 auto;
+    pointer-events: none;
+    .swiper-slide,
+    .swiper-wrapper{
+        pointer-events: none;
+    }
+    .img{
+        a{
+            display: inline-block;
+            vertical-align: text-top;
+            height: 100%;
+            pointer-events: auto;
+        }
     }
   }
-  .gallery-bottom .swiper-slide {
-    width: 20%;
-    height: 100%;
-    opacity: 0.5;
-  }
+//   .gallery-bottom .swiper-slide {
+//     width: 20%;
+//     height: 100%;
+//     opacity: 0.5;
+//   }
   
+
+.tab{
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -9999px;
+    opacity: 0;
+    visibility: hidden;
+    &.active{
+        position: relative;
+        top: 0;
+        left: 0;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+.section_block_product_btm{
+    height: 35%;
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.product_tab_lst{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    li{
+        padding: 0 10px;
+    }
+    .tab_link{
+        text-decoration: none;
+        font-size: 24px;
+        line-height: 27px;
+        &:hover{
+            color:green;
+        }
+        &.active{
+            color:red;
+        }
+    }
+}
